@@ -128,7 +128,7 @@ textold = text.text;
 
 var mscorePlugin = {
 //change name for menu
-      menu: 'Plugins.trumpetfingueringGAPBELOW5',
+      menu: 'Plugins.Trumpet Fingering',
       init: init,
       run:  run
       };

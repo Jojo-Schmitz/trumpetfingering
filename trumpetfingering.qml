@@ -24,19 +24,8 @@
 // This is ECMAScript code (ECMA-262 aka "Java Script")
 //
 
-//---------------------------------------------------------
-//    init
-//    this function will be called on startup of mscore
-//---------------------------------------------------------
-
-function init()
-{
-   // print("test script init");
-}
-
 // gibt den Griff zur midi-Nummer
-function griff(midi)
-{ 
+function griff(midi) { 
    // change for other Brass
    midi = midi-20;
    // edit and uncomment for other Brass
@@ -80,63 +69,42 @@ function griff(midi)
    }
 }
 
-//-------------------------------------------------------------------
-//    run
-//    this function will be called when activating the
-//    plugin menu entry
-//
-//    global Variables:
-//    pluginPath - contains the plugin path; file separator is "/"
-//-------------------------------------------------------------------
-
-function run()
-{
-   // no score open (MuseScore 2.0+, can't happen earlier)
-   if (typeof curScore === 'undefined')
-      return;
+MuseScore {
+   menuPath: 'Plugins.Trumpet Fingering'
+   onRrun: {
+      if (typeof curScore === 'undefined')
+         qt.Quit();
 	      
-   var cursor   = new Cursor(curScore);
-   cursor.staff = 0;
-   cursor.voice = 0;
-   cursor.rewind();  // set cursor to first chord/rest
-   var CrLf = '\r\n';
-   var textold = "xxx";
-   while (!cursor.eos()) {
-      if (cursor.isChord()) {
-         var text  = new Text(curScore);
-         text.text = griff(cursor.chord().topNote().pitch) + CrLf
-	           + cursor.chord().topNote().name;
+      var cursor   = curScore.newCursor();
+      cursor.staffIdx = 0;
+      cursor.voice = 0;
+      cursor.rewind(0);  // set cursor to first chord/rest
+      var CrLf = '\r\n';
+      var textold = "xxx";
+      while (corsor.segment) {
+         if (cursor.element && cursor.element.type == MScore.CHORD) {
+            var text  = newElement(MScore.STAFF_TEXT)
+            text.text = griff(cursor.element.notes[0].pitch) + CrLf
+                      + cursor.element.notes[0].name;
 	               
-         // comment this block for american note names
-         // text.text = text.text.replace("A","la");
-         // text.text = text.text.replace("B","si");
-         // text.text = text.text.replace("C","po");
-         // text.text = text.text.replace("D","re");
-         // text.text = text.text.replace("E","mi");
-         // text.text = text.text.replace("F","fa");
-         // text.text = text.text.replace("G","sol");
-         // comment the above block for american note names
-         text.yOffset = 7;
-         if (text.text != textold) {cursor.putStaffText(text);}
-         textold = text.text;
-         if (text.text = textold) {cursor.putStaffText(text);}
-         textold = text.text;
+            // comment this block for american note names
+            // text.text = text.text.replace("A","la");
+            // text.text = text.text.replace("B","si");
+            // text.text = text.text.replace("C","po");
+            // text.text = text.text.replace("D","re");
+            // text.text = text.text.replace("E","mi");
+            // text.text = text.text.replace("F","fa");
+            // text.text = text.text.replace("G","sol");
+            // comment the above block for american note names
+
+            //text.yOffset = 7;
+            if (text.text != textold) cursor.add(text);
+            textold = text.text;
+            if (text.text = textold) cursor.add(text);
+            textold = text.text;
+         }
+         cursor.next();
       }
-      cursor.next();
+      Qt.quit();
    }
 }
-
-//---------------------------------------------------------
-//    menu:  defines were the function will be placed
-//           in the MuseScore menu structure
-//---------------------------------------------------------
-
-var mscorePlugin = {
-      //change name for menu
-      menu: 'Plugins.Trumpet Fingering',
-      init: init,
-      run:  run
-      };
-
-mscorePlugin;
-

@@ -24,6 +24,8 @@ import QtQuick 1.0
 import MuseScore 1.0
 
 MuseScore {
+   version: "1.0"
+   description: "This plugin names notes and adds trumpet fingering"
    menuPath: 'Plugins.Trumpet Fingering'
    onRun: {
       // gibt den Griff zur midi-Nummer

@@ -87,8 +87,8 @@ MuseScore {
       var CrLf = '\r\n';
       var textold = "xxx";
       while (cursor.segment) {
-         if (cursor.element && cursor.element.type == MScore.CHORD) {
-            var text  = newElement(MScore.STAFF_TEXT)
+         if (cursor.element && cursor.element.type == Element.CHORD) {
+            var text  = newElement(Element.STAFF_TEXT)
             text.text = griff(cursor.element.notes[0].pitch) + CrLf
                       + names[cursor.element.notes[0].pitch % 12];
             //text.yOffset = 7;

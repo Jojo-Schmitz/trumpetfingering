@@ -78,7 +78,7 @@ MuseScore {
 	      
       var names = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
       // comment this block for american note names
-      //var names = ["po","po#","re","re#","mi","fa","fa#","sol","sol#","la","la#","si"];
+      //var names = ["do","do#","re","re#","mi","fa","fa#","sol","sol#","la","la#","si"];
       // comment the above block for american note names
       var cursor   = curScore.newCursor();
       cursor.staffIdx = 0;

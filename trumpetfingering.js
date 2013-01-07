@@ -110,7 +110,7 @@ function run()
          // comment this block for american note names
          // text.text = text.text.replace("A","la");
          // text.text = text.text.replace("B","si");
-         // text.text = text.text.replace("C","po");
+         // text.text = text.text.replace("C","do");
          // text.text = text.text.replace("D","re");
          // text.text = text.text.replace("E","mi");
          // text.text = text.text.replace("F","fa");

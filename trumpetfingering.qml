@@ -84,14 +84,14 @@ MuseScore {
       cursor.staffIdx = 0;
       cursor.voice = 0;
       cursor.rewind(0);  // set cursor to first chord/rest
-      var CrLf = '\r\n';
+      var CrLf = '\n';
       var textold = "xxx";
       while (cursor.segment) {
          if (cursor.element && cursor.element.type == Element.CHORD) {
             var text  = newElement(Element.STAFF_TEXT)
             text.text = griff(cursor.element.notes[0].pitch) + CrLf
                       + names[cursor.element.notes[0].pitch % 12];
-            //text.yOffset = 7;
+            text.pos.y = 9;
             if (text.text != textold) cursor.add(text);
             textold = text.text;
             if (text.text = textold) cursor.add(text);

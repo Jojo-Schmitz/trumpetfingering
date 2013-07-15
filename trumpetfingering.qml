@@ -20,17 +20,13 @@
 //  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 //=============================================================================
 
-import QtQuick 2.0
+import QtQuick 1.0
 import MuseScore 1.0
 
 MuseScore {
    version: "1.0"
    description: "This plugin names notes and adds trumpet fingering"
    menuPath: 'Plugins.Trumpet Fingering'
-   Cursor {
-      id: cursor
-      score: curScore
-   }
    onRun: {
       // gibt den Griff zur midi-Nummer
       function griff(midi) { 
@@ -84,6 +80,7 @@ MuseScore {
       // comment this block for american note names
       //var names = ["do","do#","re","re#","mi","fa","fa#","sol","sol#","la","la#","si"];
       // comment the above block for american note names
+      var cursor   = curScore.newCursor();
       cursor.staffIdx = 0;
       cursor.voice = 0;
       cursor.rewind(0);  // set cursor to first chord/rest

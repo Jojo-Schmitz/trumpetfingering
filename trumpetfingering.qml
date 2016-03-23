@@ -4,7 +4,7 @@
 // Note names and fingerings for Trumpet Bb
 // changable for other Brass
 //
-//  Contribution Artur Vil· Canal, Joachim Schmitz
+//  Contribution Artur Vil√† Canal, Joachim Schmitz, BurkardS
 //  Copyright (c) 2011 Karl Gerhards, (C)2008 Werner Schweer and others
 //
 //  This program is free software; you can redistribute it and/or modify
@@ -31,7 +31,7 @@ MuseScore {
       // gibt den Griff zur midi-Nummer
       function griff(midi) { 
          // change for other Brass
-         midi = midi-20;
+         midi = midi-18;
          // edit and uncomment for other Brass
          //midi = midi-20;
          // for 4 valves, usually 1+3 = 4
@@ -76,9 +76,9 @@ MuseScore {
       if (typeof curScore === 'undefined')
          qt.Quit();
 	      
-      var names = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+      var names = ["D","D#","E","F","F#","G","G#","A","A#","B","C","C#"];
       // comment this block for american note names
-      //var names = ["do","do#","re","re#","mi","fa","fa#","sol","sol#","la","la#","si"];
+      //var names = ["re","re#","mi","fa","fa#","sol","sol#","la","la#","si", "do","do#"];
       // comment the above block for american note names
       var cursor   = curScore.newCursor();
       cursor.staffIdx = 0;

@@ -20,11 +20,11 @@
 //  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 //=============================================================================
 
-import QtQuick 2.0
-import MuseScore 1.0
+import QtQuick 2.9
+import MuseScore 3.0
 
 MuseScore {
-   version: "1.0"
+   version: "3.0"
    description: "This plugin names notes and adds trumpet fingering"
    menuPath: 'Plugins.Trumpet Fingering'
    onRun: {
@@ -73,9 +73,6 @@ MuseScore {
          }
       }
 
-      if (typeof curScore === 'undefined')
-         qt.Quit();
-	      
       var names = ["D","D#","E","F","F#","G","G#","A","A#","B","C","C#"];
       // comment this block for american note names
       //var names = ["re","re#","mi","fa","fa#","sol","sol#","la","la#","si", "do","do#"];
@@ -91,7 +88,7 @@ MuseScore {
             var text  = newElement(Element.STAFF_TEXT)
             text.text = griff(cursor.element.notes[0].pitch) + CrLf
                       + names[cursor.element.notes[0].pitch % 12];
-            text.pos.y = 9;
+            //text.offsetY = 9;
             if (text.text != textold) cursor.add(text);
             textold = text.text;
             if (text.text = textold) cursor.add(text);

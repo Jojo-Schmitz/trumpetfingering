@@ -27,6 +27,14 @@ MuseScore {
    version: "3.0"
    description: "This plugin names notes and adds trumpet fingering"
    menuPath: 'Plugins.Trumpet Fingering'
+   id: trumpetFingering
+
+   Component.onCompleted : {
+      if (mscoreMajorVersion >= 4) {
+          trumpetFingering.title = "Trumpet Fingering";
+      }
+   }
+
    onRun: {
       // gibt den Griff zur midi-Nummer
       function griff(midi) { 
@@ -96,6 +104,6 @@ MuseScore {
          }
          cursor.next();
       }
-      Qt.quit();
+      quit();
    }
 }

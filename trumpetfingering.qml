@@ -36,6 +36,9 @@ MuseScore {
    }
 
    onRun: {
+   
+      curScore.startCmd()
+    
       // gibt den Griff zur midi-Nummer
       function griff(midi) { 
          // change for other Brass
@@ -104,6 +107,8 @@ MuseScore {
          }
          cursor.next();
       }
+      
+      curScore.endCmd()
       quit();
    }
 }

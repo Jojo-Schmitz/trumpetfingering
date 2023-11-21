@@ -109,6 +109,6 @@ MuseScore {
       }
       
       curScore.endCmd()
-      quit();
+      (typeof(quit) === 'undefined' ? Qt.quit : quit)()
    }
 }

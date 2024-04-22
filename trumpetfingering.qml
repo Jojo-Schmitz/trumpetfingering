@@ -95,12 +95,12 @@ MuseScore {
       var CrLf = '\n';
       var textold = "xxx";
       while (cursor.segment) {
-         if (cursor.element && cursor.element.type == Element.CHORD) {
+         if (cursor.element && cursor.element.type === Element.CHORD) {
             var text  = newElement(Element.STAFF_TEXT)
             text.text = griff(cursor.element.notes[0].pitch) + CrLf
                       + names[cursor.element.notes[0].pitch % 12];
             //text.offsetY = 9;
-            if (text.text != textold) cursor.add(text);
+            if (text.text !== textold) cursor.add(text);
             textold = text.text;
             if (text.text = textold) cursor.add(text);
             textold = text.text;

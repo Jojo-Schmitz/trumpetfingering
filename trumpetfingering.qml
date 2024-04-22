@@ -91,7 +91,7 @@ MuseScore {
       var cursor   = curScore.newCursor();
       cursor.staffIdx = 0;
       cursor.voice = 0;
-      cursor.rewind(0);  // set cursor to first chord/rest
+      cursor.rewind(Cursor.SCORE_START);  // set cursor to first chord/rest
       var CrLf = '\n';
       var textold = "xxx";
       while (cursor.segment) {

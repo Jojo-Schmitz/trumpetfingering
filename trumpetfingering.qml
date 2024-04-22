@@ -102,7 +102,7 @@ MuseScore {
             //text.offsetY = 9;
             if (text.text !== textold) cursor.add(text);
             textold = text.text;
-            if (text.text = textold) cursor.add(text);
+            if (text.text === textold) cursor.add(text);
             textold = text.text;
          }
          cursor.next();

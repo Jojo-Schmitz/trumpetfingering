@@ -28,9 +28,9 @@ MuseScore {
    description: "This plugin names notes and adds trumpet fingering"
    menuPath: 'Plugins.Trumpet Fingering'
    id: trumpetFingering
-
+   //4.4 title: "Trumpet Fingering"
    Component.onCompleted : {
-      if (mscoreMajorVersion >= 4) {
+      if (mscoreMajorVersion >= 4 && mscoreMinorVersion <= 3) }
           trumpetFingering.title = "Trumpet Fingering";
       }
    }

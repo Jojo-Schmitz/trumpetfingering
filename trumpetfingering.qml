@@ -30,7 +30,7 @@ MuseScore {
    id: trumpetFingering
    //4.4 title: "Trumpet Fingering"
    Component.onCompleted : {
-      if (mscoreMajorVersion >= 4 && mscoreMinorVersion <= 3) }
+      if (mscoreMajorVersion >= 4 && mscoreMinorVersion <= 3) {
           trumpetFingering.title = "Trumpet Fingering";
       }
    }
